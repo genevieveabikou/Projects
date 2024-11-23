@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Survey form</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  
+  <body>
+    <h1 id="title">Survey form </br>
+      How are we doing?
+    </h1>
+    <p id="description"> Please take a few minutes to fill out this survey form to state your satisfaction with the service provided today</p>
+    <form id="survey-form" method="post" action="https://register-demo.freecodecamp.org">
+<fieldset>
+      <label id="name-label">Name
+        <input class="info" name="name" required id="name" type="text" placeholder="Enter Your Name">
+      </label> 
+
+      <label id="email-label">Email Adress
+        <input class="info" name="email" required id="email" type="email" placeholder="Enter Your Email Adress">
+      </label> 
+
+      <label id="number-label">Phone Number
+        <input class="info" name="number" id="number" type="number" pattern="[0-9]" min="1" max="100000000000" placeholder="Enter Your Phone Number">
+      </label> 
+
+      <label for="dropdown"> How did you hear about us?
+      <select id="dropdown">
+        <option value="" disabled selected hidden></option>
+        <option>(select an option)</option>
+        <option>From a friend</option>
+        <option>On our website</option>
+        <option>On the news</option>
+        <option>I'm a regular customer</option>
+      </select>
+      </label>
+</fieldset>
+
+<fieldset>
+      <p>How would you rate the following at the Bank?</p>
+        <table>
+            <thead>
+                <tr id="tr">
+                    <th>Aspect</th>
+                    <th>Very dissatisfied</th>
+                    <th>Dissatisfied</th>
+                    <th>Neutral</th>
+                    <th>Satisfied</th>
+                    <th>Very satisfied</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Customer service</td>
+                    <td><label><input type="radio" name="customer_service" value="very_dissatisfied"></label></td>
+                    <td><label><input type="radio" name="customer_service" value="dissatisfied"></label></td>
+                    <td><label><input type="radio" name="customer_service" value="neutral"></label></td>
+                    <td><label><input type="radio" name="customer_service" value="satisfied"></label></td>
+                    <td><label><input type="radio" name="customer_service" value="very_satisfied"></label></td>
+                </tr>
+                <tr>
+                    <td>Listening</td>
+                    <td><label><input type="radio" name="listening" value="very_dissatisfied"></label></td>
+                    <td><label><input type="radio" name="listening" value="dissatisfied"></label></td>
+                    <td><label><input type="radio" name="listening" value="neutral"></label></td>
+                    <td><label><input type="radio" name="listening" value="satisfied"></label></td>
+                    <td><label><input type="radio" name="listening" value="very_satisfied"></label></td>
+                </tr>
+                <tr>
+                    <td>Knowledge</td>
+                    <td><label><input type="radio" name="knowledge" value="very_dissatisfied"></label></td>
+                    <td><label><input type="radio" name="knowledge" value="dissatisfied"></label></td>
+                    <td><label><input type="radio" name="knowledge" value="neutral"></label></td>
+                    <td><label><input type="radio" name="knowledge" value="satisfied"></label></td>
+                    <td><label><input type="radio" name="knowledge" value="very_satisfied"></label></td>
+                </tr>
+                <tr>
+                    <td>Troubleshoot</td>
+                    <td><label><input type="radio" name="troubleshoot" value="very_dissatisfied"></label></td>
+                    <td><label><input type="radio" name="troubleshoot" value="dissatisfied"></label></td>
+                    <td><label><input type="radio" name="troubleshoot" value="neutral"></label></td>
+                    <td><label><input type="radio" name="troubleshoot" value="satisfied"></label></td>
+                    <td><label><input type="radio" name="troubleshoot" value="very_satisfied"></label></td>
+                </tr>
+                <tr>
+                    <td>Empathy</td>
+                    <td><label><input type="radio" name="empathy" value="very_dissatisfied"></label></td>
+                    <td><label><input type="radio" name="empathy" value="dissatisfied"></label></td>
+                    <td><label><input type="radio" name="empathy" value="neutral"></label></td>
+                    <td><label><input type="radio" name="empathy" value="satisfied"></label></td>
+                    <td><label><input type="radio" name="empathy" value="very_satisfied"></label></td>
+                </tr>
+                <tr>
+                    <td>Overall service delivery</td>
+                    <td><label><input type="radio" name="overall_service" value="very_dissatisfied"></label></td>
+                    <td><label><input type="radio" name="overall_service" value="dissatisfied"></label></td>
+                    <td><label><input type="radio" name="overall_service" value="neutral"></label></td>
+                    <td><label><input type="radio" name="overall_service" value="satisfied"></label></td>
+                    <td><label><input type="radio" name="overall_service" value="very_satisfied"></label></td>
+                </tr>
+            </tbody>
+        </table>
+</fieldset>
+        <fieldset>
+          <p>What can we do better?<small>(Check all that apply)</small></p>
+          <label for="promote"><input value="promote" type="checkbox" id="promote"/> Promote Financial Literacy Through Customer Education</label>
+          <label><input value="communication" type="checkbox"/> Clear Communication Channels and Responsiveness</label>
+          <label><input value="invest" type="checkbox"/> Invest in Technology</label>
+          <label><input value="personalize" type="checkbox"/> Personalization</label>
+        </fieldset>
+
+        <fieldset>
+          <p>Can you tell us more  about your overall experience with us?</p>
+          <textarea placeholder="Add additional comment"></textarea>
+        </fieldset>
+
+        <input id="submit" type="submit" value="Submit">
+    </form>
+  </body>
+</html>
+
+

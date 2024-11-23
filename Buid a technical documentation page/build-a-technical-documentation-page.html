@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>Weather API Documentation Page</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <nav id="navbar">
+                <img src="C:\Users\genev\Downloads\weather-icon-logo-illustration-cloud-with-sun-symbol-template-for-graphic-and-web-design-collection-free-vector.jpg" alt="Weather logo"><header>Weather API Technical Documentation Page</header>
+                <a class="nav-link" href="#Introduction">Introduction</a>
+                <a class="nav-link" href="#Getting_started">Getting Started</a>
+                <a class="nav-link" href="#Authentication">Authentication</a>
+                <a class="nav-link" href="#API_Endpoints">API Endpoints</a>
+                <a class="nav-link" href="#Error_Handling">Error Handling</a>
+            </nav>
+
+        <main id="main-doc">
+            <section class="main-section" id="Introduction">
+                <header>Introduction</header>
+                <p>The Weather API allows developers to access data from anywhere in the worlds. It provides accurate information such as temperature, humidity, wind speed, and more.</p>
+                <p>This documentation will help you get started with using the Weather API for your project.</p>
+                <p>Additionally, the API supports both free and paid tiers, allowing developpers to start with a free plan and scale up as needed, based on usage.</p>
+                <p>With the proper error handling and authentication, you can retrieve weather data sealessly and securely, making your apps more user-friendly and reliable.</p>
+            </section>
+
+            <section class="main-section" id="Getting_started">
+                <header>Getting started</header>
+                <p>To start using the Weather API, you first need to sign up for an account and obtain an API key. The API key will be required in all your requests to authenticate and authorize access to the weather data.</p>
+                <p>Once you have your API key, you can start making requests to the Weather API by passing it in the request header or as a query parameter.</p>
+                <ul>
+                    <li>Visit the Weather API <a href="https://www.weatherapi.com/signup.aspx">Sign Up Page</a> to get your API key.</li>
+                    <li>Authenticate using your API key with every request.</li>
+                </ul>
+                <pre><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+            </section>
+
+            <section class="main-section" id="Authentication">
+                <header>Authentication</header>
+                <p>Every request made to the Weather API must include your unique API key for authentication. Requests without a valid API key will result in an authorization error.</p>
+                <p>If at any time, the API key is compromised, you must regenerate a new key by clicking the Regenerate button located next to the API key.</p>
+                <p>Alternatively, you can pass the API key as a query parameter:</p>
+                <pre><code>GET https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=Location</code></pre>
+            </section>
+
+            <section class="main-section" id="API_Endpoints">
+                <header>API Endpoints</header>
+                <p>The Weather API provides multiple endpoints to fetch data based on location, time, and weather conditions. Below are some API key endpoints:</p>
+                <h3>Current Weather</h3>
+                <p>Fetches real-time weather data for a specific location:</p>
+                <pre><code>GET https://api.weatherapi.com/v1/current.json</code></pre>
+                <h3>Forecast</h3>
+                <p>Fetches weather forecast data for the upcoming days:</p>
+                <pre><code>GET https://api.weatherapi.com/v1/forecast.json?key=YOUR_API_KEY&q=Location&days=5</code></pre>
+                <ul>
+                    <li><pre><code>q //The location (city or postal code)</code></pre></li>
+                    <li><pre><code>date //Number of forecast days (up to 10 days)</code></pre></li>
+                </ul>
+                <h3>Search or Autocomplete</h3>
+                <p>Helps to search for a location by name, postal code, or even IP address. This can also be used to provide autocomplete suggestions for user input:</p>
+                <pre><code>GET https://api.weatherapi.com/v1/search.json?key=YOUR_API_KEY&q=Location</code></pre>
+                <h3>History</h3>
+                <p>Retrives historical weather data for a given location. You can specify the date for which you want the weather data:</p>
+                <pre><code>GET https://api.weatherapi.com/v1/history.json?key=YOUR_API_KEY&q=Location&dt=2024-09-12</code></pre>
+                <h3>Sports</h3>
+                <p>Gives weather data specifically tailored for sports, such as soccer, golf, or tennis, including the conditions at sports venues.:</p>
+                <pre><code>GET https://api.weatherapi.com/v1/sports.json?key=YOUR_API_KEY&q=Location</code></pre>
+            </section>
+
+            <section class="main-section" id="Error_Handling">
+                <header>Error Handling</header>
+                <p>The Weather API provides detailed error messages for every failed request. Common errors include invalid API keys, missing required parameters, and exceeded rate limits.</p>
+                <p>When an error occurs, the API returns a status code and a detailed error message in the response body, which can help diagnose and resolve the issue quickly.</p>
+                <p>Here's an example of an error response when an API key is invalid:</p>
+                <pre><code>
+                    {
+                        "error":{
+                            "code":1006, 
+                            "message": "API key is invalid or not provided."
+                        }
+                    }
+                    </code></pre>
+                    <p>It is essential to implement proper error handling in your application to gracefully manage failed API requests.</p>
+                    <p>Errors related to exceeded rate limits can be avoided by monitoring your API usage and ensuring your requests stay within the limits of your subscription plan. Considering the implementation of caching to reduce the number of requests is a recommendation.</p>
+                    <p>Here are some few API error codes and their meaning:</p>
+                <ul>
+                    <li><strong>1002:</strong> API key not provided.</li>
+                    <li><strong>1003:</strong> Parameter 'q' not provided.</li>
+                    <li><strong>1005:</strong> API request url is invalid.</li>
+                    <li><strong>1006:</strong> No location found matching parameter 'q'.</li>
+                    <li><strong>2006:</strong> API key provided is invalid.</li>
+                </ul>
+            </section>
+        </main>
+    </body>
+
+    <footer><p>For more information about Weather API, please visit the official <a href="https://www.weatherapi.com/docs/#">Weather API Documentation</a> site.</p>
+</html>
+
